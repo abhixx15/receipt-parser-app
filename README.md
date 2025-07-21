@@ -1,58 +1,84 @@
-# receipt-parser-app
-A simple full-stack app to extract structured data (vendor, date, amount, category) from receipts using OCR or rule-based logic, store it in a database, and analyze expenses with search, sort, and aggregation.
+# 🧾 Receipt Parser App – Python Internship Project
 
-Features  
-Upload .jpg, .png, .pdf, .txt receipt files
-Extract text using EasyOCR
-Parse fields: Vendor, Date, Amount, Category
-Store data in SQLite
-Search by keyword, range (min/max amount), pattern
-Bubble Sort by amount/date/vendor
-View:  
-Aggregates (sum, mean, median, mode)
-Monthly spend trends
-Vendor frequency charts
-Built with Streamlit
+A simple full-stack OCR app that extracts structured information from receipts (vendor, date, amount, category), stores it in a database, and visualizes spend trends using Streamlit.
 
-# Project Structure
-├── main.py          # Streamlit app UI   
-├── parser.py        # Regex-based text field extraction    
-├── ocr.py           # EasyOCR image text extractor
-├── database.py      # SQLite database manager
-├── sort.py          # Bubble sort implementation
-├── search.py        # Search utilities (keyword, range, pattern)
-├── aggregate.py     # Stats & time-series aggregation
-├── requirements.txt # Python dependencies
-└── README.md        # Project documentation
+---
 
-Setup Instructions
-Prerequisites
-Python 3.8+
-Conda or venv (recommended)
-Step-by-Step Setup
-# Create environment
+## 🚀 Features
+
+- 🔍 **EasyOCR**-based image text extraction
+- 📄 Rule-based parser using regex
+- 🧠 Extracts: **Vendor, Date, Amount, Category**
+- 💾 Stores data in **SQLite**
+- 🔎 Keyword / range / pattern **search**
+- 🔃 Simple **bubble sort**
+- 📈 Aggregations:
+  - Total spend
+  - Mean, median, mode
+  - Monthly trends
+  - Vendor frequency
+- 🌐 Streamlit UI for interaction
+
+---
+
+## 📁 Project Structure
+<img width="504" height="353" alt="image" src="https://github.com/user-attachments/assets/c09b0c46-502a-486d-a5ef-95bb2888c890" />
+
+
+---
+
+## 🛠️ Setup Instructions
+
+### 🔧 Prerequisites
+
+- Python 3.8 or higher
+- `pip` or `conda`
+- A clean environment (recommended)
+
+### 📦 Installation
+
+```bash
+git clone https://github.com/YOUR_USERNAME/receipt_parser_app.git
+cd receipt_parser_app
 conda create -n receipt_env python=3.11 -y
 conda activate receipt_env
-# Clone repository
-git clone https://github.com/YOUR_USERNAME/receipt-parser-app.git
-cd receipt-parser-app
-# Install dependencies
-pip install -r requirements.txt
-If installing manually:
-pip install streamlit easyocr pandas
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-Run the App
-streamlit run main.py
+pip install -r requirements.txt    
+    
+```
+
+                      
+## ⚠️ Limitations
+
+| Area    | Notes                                                                 |
+|---------|-----------------------------------------------------------------------|
+| OCR     | Accuracy may fail on blurry, angled, or handwritten receipts          |
+| Amount  | Parsing relies on keywords like `Total`, `Rs`, `₹`, `Amount`         |
+| Sorting | Bubble sort is basic; only suitable for small datasets                |
 
 
-# Limitations
-Area	     Notes  
-OCR        Accuracy	May fail on blurry/angled/handwritten receipts   
-Amount     Parsing	Relies on keywords like Total, Rs, ₹, Amount   
-Sorting    Speed	Bubble sort is basic; works for small datasets  
 
 
 # Assumptions  
-One transaction per receipt
-Fields appear in standard text form
-EasyOCR works best on high-resolution text
+- One transaction per receipt
+- Fields appear in standard text form
+- EasyOCR works best on high-resolution text
+
+
+### Screenshots
+
+<img width="1918" height="895" alt="image" src="https://github.com/user-attachments/assets/e51cf625-5f3c-4e27-a2cb-8db257d32090" />
+
+#### ✅ 1. Uploading a Receipt
+<img width="1027" height="360" alt="image" src="https://github.com/user-attachments/assets/15599072-4919-4e28-a4f1-0203857af87d" />
+
+#### ✅ 2. Parsed Fields
+<img width="444" height="346" alt="image" src="https://github.com/user-attachments/assets/9b322670-99cf-4b97-993b-1d647106f7ef" />
+
+#### ✅ 3. Data Table & Stats
+<img width="940" height="285" alt="image" src="https://github.com/user-attachments/assets/8cdb8c29-e312-4df2-8ebd-5b3b3143c71f" />
+
+#### ✅ 4. Charts: Spend Trend and Vendor Frequency
+<img width="1143" height="553" alt="image" src="https://github.com/user-attachments/assets/737bbe2f-4870-4d6a-81a9-386c9ff4da1d" />
+
+
+
