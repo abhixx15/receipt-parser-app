@@ -50,14 +50,26 @@ pip install -r requirements.txt
 streamlit run main.py
 ```
                       
-## ⚠️ Limitations
+## ⚠️ Known Limitations & Failure Reasons
 
-| Area    | Notes                                                                 |
-|---------|-----------------------------------------------------------------------|
-| OCR     | Accuracy may fail on blurry, angled, or handwritten receipts          |
-| Amount  | Parsing relies on keywords like `Total`, `Rs`, `₹`, `Amount`         |
-| Sorting | Bubble sort is basic; only suitable for small datasets                |
+Here are common reasons why the app may fail to extract receipt information:
 
+| Problem Area           | Cause                                                                 |
+|------------------------|----------------------------------------------------------------------|
+| **OCR Failure**        | Image is blurry, dark, noisy, rotated, or handwritten                |
+| **Regex Not Matching** | Amount/date is written in uncommon formats like `Due: 1000`          |
+| **Wrong Character Read** | EasyOCR may misread `₹` as `P`, `0` as `O`, or `1` as `I`           |
+| **PDF Not Working**    | If PDF is scanned poorly, OCR won't extract text — use a clearer image |
+| **Missing Labels**     | Amount/date must be labeled (e.g., `Total`, `₹`, `Amount`) to be captured |
+| **Noisy Background**   | Decorative fonts, backgrounds, or logo images reduce OCR accuracy     |
+
+### 🛠 Suggested Fixes
+
+- Use **clear, printed receipts**
+- Ensure the **labels like `Total`, `₹`, `Rs`, `Date`** are visible
+- If PDF isn't working, **convert it to image first**
+- Rotate/deskew if text is tilted
+- Consider **preprocessing the image** (grayscale, sharpen)
 
 
 
