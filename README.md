@@ -45,7 +45,10 @@ conda activate receipt_env
 pip install -r requirements.txt    
     
 ```
-
+#### Running the App
+```bash
+streamlit run main.py
+```
                       
 ## ⚠️ Limitations
 
@@ -62,6 +65,15 @@ pip install -r requirements.txt
 - One transaction per receipt
 - Fields appear in standard text form
 - EasyOCR works best on high-resolution text
+
+  
+### 🔐 Security Notice
+This app does not collect or store personal data online. All data stays in your local SQLite database.
+
+### License
+- This project is created for educational and internship evaluation purposes only.
+- You may reuse the code with attribution for personal or academic use.
+
 
 
 ### Screenshots
