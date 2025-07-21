@@ -1,4 +1,4 @@
-# 🧾 Receipt Parser App – Python Internship Project
+# 🧾 Receipt Parser App – Python Project
 
 A simple full-stack OCR app that extracts structured information from receipts (vendor, date, amount, category), stores it in a database, and visualizes spend trends using Streamlit.
 
